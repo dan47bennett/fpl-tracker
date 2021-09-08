@@ -12,9 +12,9 @@ npm run dev
 
 ### Tasks
 
-- Initial Next build
-- Basic design/UX concept
-- Decide what metrics are important to show: basic provided by API or additional
+- [x] Initial Next build
+- [ ] Basic design/UX concept
+- [ ] Decide what metrics are important to show: basic provided by API or additional
 
 - Metric ideas:
   - Points per M cost.
