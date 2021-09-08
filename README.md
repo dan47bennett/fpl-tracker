@@ -1,7 +1,17 @@
 # fpl-tracker
+
 A site showing metrics for Fantasy Premier League using the FPL API. Built in Next.js with Typescript.
 
-Tasks:
+## Development
+
+To run the development server at [localhost:3000](http://localhost:3000) run the command
+
+```
+npm run dev
+```
+
+### Tasks
+
 - Initial Next build
 - Basic design/UX concept
 - Decide what metrics are important to show: basic provided by API or additional
