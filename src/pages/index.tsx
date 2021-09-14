@@ -25,9 +25,11 @@ const Index: NextPage = () => {
 
 	return (
 		<>
-			<div>FPL Tracker</div>
-
-			<PlayerEntry player={displayData[0]} />
+			{displayData.length > 0 ? (
+				<PlayerEntry player={displayData[0]} />
+			) : (
+				<div>Loading...</div>
+			)}
 		</>
 	);
 };
