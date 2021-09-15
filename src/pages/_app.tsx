@@ -21,7 +21,12 @@ const theme = {
 	colors: {
 		primary: '#F0F9FA',
 		secondary: '#46A2C3',
-		alt: '#093249',
+		alt: '#E5E5E5',
+		button: '#093249',
+	},
+	fontSize: {
+		title: '20px',
+		table: '12px',
 	},
 };
 
