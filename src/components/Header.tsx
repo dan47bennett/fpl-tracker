@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const HeaderDiv = styled.div`
 	background-color: ${({ theme }) => theme.colors.secondary};
 	color: ${({ theme }) => theme.colors.primary};
+	font-size: ${({ theme }) => theme.fontSize.title};
 	height: 80px;
 	padding-left: 30px;
 	display: flex;
