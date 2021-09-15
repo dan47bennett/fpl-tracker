@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import React, { useEffect, useState } from 'react';
 import { getAllPlayerInfo } from '../api';
 import { PlayerEntry } from '../components/PlayerEntry';
+import { RankingTable } from '../components/RankingTable';
 import { Player } from '../types';
 import { sortByKey } from '../utils/sortByKey';
 
@@ -23,15 +24,7 @@ const Index: NextPage = () => {
 		setDisplayData(sortedArray);
 	}, [allData]);
 
-	return (
-		<>
-			{displayData.length > 0 ? (
-				<PlayerEntry player={displayData[0]} />
-			) : (
-				<div>Loading...</div>
-			)}
-		</>
-	);
+	return <RankingTable players={displayData} />;
 };
 
 export default Index;
