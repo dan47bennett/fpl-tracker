@@ -1,33 +1,29 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { TableContainer } from '../../styles/playerTableStyles';
 import { Player, PlayerSortProps } from '../../types';
 import { sortByKey } from '../../utils/sortByKey';
 import { PageSelectionButtons } from './PageSelectionButtons';
 import { PlayerTable } from './PlayerTable';
-
-const headings = ['Name', 'Total Points'];
+import { TableHeadings } from './TableHeadings';
 
 export const RankingTable: React.FC<{ players: Player[] }> = ({ players }) => {
 	const [sortingKey, setSortingKey] = useState<keyof PlayerSortProps>(
 		'total_points'
 	);
-	const [sortedData, setSortedData] = useState<Player[]>([]);
+	const [displayData, setDisplayData] = useState<Player[]>([]);
 	const [page, setPage] = useState(0);
-
-	const displayData = useMemo(
-		() => sortedData.slice(20 * page, 20 * (page + 1)),
-		[sortedData, page]
-	);
 
 	useEffect(() => {
 		if (players) {
 			const sortedArray = sortByKey(players, sortingKey);
-			console.log('sortedArray: ', sortedArray);
-			setSortedData(sortedArray);
+			const slicedData = sortedArray.slice(20 * page, 20 * (page + 1));
+			setDisplayData(slicedData);
 		}
-	}, [players, sortingKey]);
+	}, [players, sortingKey, page]);
 
 	return (
-		<>
+		<TableContainer>
+			<TableHeadings setSortingKey={setSortingKey} setPage={setPage} />
 			<PlayerTable players={displayData} />
 			<PageSelectionButtons
 				onClickPrev={() => {
@@ -38,6 +34,6 @@ export const RankingTable: React.FC<{ players: Player[] }> = ({ players }) => {
 				}}
 				PageText={page + 1}
 			/>
-		</>
+		</TableContainer>
 	);
 };
