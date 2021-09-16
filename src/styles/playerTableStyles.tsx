@@ -33,3 +33,10 @@ export const TotalPointsColumn = styled.div`
 	align-items: center;
 	justify-content: center;
 `;
+
+export const CostColumn = styled.div`
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
