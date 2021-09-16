@@ -26,6 +26,7 @@ export interface PlayerSortProps {
 	value_form: string;
 	value_season: string;
 	yellow_cards: number;
+	web_name: string;
 }
 
 export interface Player extends PlayerSortProps {
@@ -68,7 +69,6 @@ export interface Player extends PlayerSortProps {
 	threat: string;
 	threat_rank: number;
 	threat_rank_type: number;
-	web_name: string;
 }
 
 // position - FWD - element_type 4, MID - element_type 3, DEF - element_type 2, GK - element_type 1
