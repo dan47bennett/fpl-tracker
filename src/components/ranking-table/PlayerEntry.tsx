@@ -1,16 +1,18 @@
 import React from 'react';
 import {
+	CostColumn,
 	EntryContainer,
-	NameRow,
-	TotalPoints,
+	NameColumn,
+	TotalPointsColumn,
 } from '../../styles/playerTableStyles';
 import { Player } from '../../types';
 
 export const PlayerEntry: React.FC<{ player: Player }> = ({ player }) => {
 	return (
 		<EntryContainer>
-			<NameRow>{player.web_name}</NameRow>
-			<TotalPoints>{player.total_points}</TotalPoints>
+			<NameColumn>{player.web_name}</NameColumn>
+			<TotalPointsColumn>{player.total_points}</TotalPointsColumn>
+			<CostColumn>{player.now_cost / 10}</CostColumn>
 		</EntryContainer>
 	);
 };
