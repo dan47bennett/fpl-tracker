@@ -29,6 +29,8 @@ export interface PlayerSortProps {
 	web_name: string;
 }
 
+export type playerProp = keyof PlayerSortProps;
+
 export interface Player extends PlayerSortProps {
 	chance_of_playing_next_round: number | null;
 	chance_of_playing_this_round: number | null;
