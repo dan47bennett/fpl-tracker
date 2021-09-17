@@ -16,7 +16,7 @@ const Index: NextPage = () => {
 		loadData();
 	}, []);
 
-	return <RankingTable players={allData} />;
+	return <RankingTable playersPerPage={allData.length} players={allData} />;
 };
 
 export default Index;
