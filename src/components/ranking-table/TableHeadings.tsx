@@ -1,37 +1,49 @@
 import React from 'react';
 import {
-	CostColumn,
+	CostColumnHeading,
 	HeadingContainer,
-	NameColumn,
-	TotalPointsColumn,
+	NameColumnHeading,
+	TotalPointsColumnHeading,
 } from '../../styles/playerTableStyles';
-import { PlayerSortProps } from '../../types';
+import { playerProp } from '../../types';
 
 interface TableHeadingsProps {
-	setSortingKey: React.Dispatch<React.SetStateAction<keyof PlayerSortProps>>;
-	setPage: React.Dispatch<React.SetStateAction<number>>;
+	onHeadingClick: (sortProp: playerProp) => void;
+	sortingKey: playerProp;
 }
 
 export const TableHeadings: React.FC<TableHeadingsProps> = ({
-	setSortingKey,
-	setPage,
+	onHeadingClick,
+	sortingKey,
 }) => {
-	const onHeadingClick = (sortProp: keyof PlayerSortProps) => {
-		setPage(0);
-		setSortingKey(sortProp);
+	const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+		const id = e.currentTarget.id as playerProp;
+		onHeadingClick(id);
 	};
 
 	return (
 		<HeadingContainer>
-			<NameColumn onClick={() => onHeadingClick('web_name')}>
+			<NameColumnHeading
+				sortingKey={sortingKey as string}
+				id="web_name"
+				onClick={handleClick}
+			>
 				Player Name
-			</NameColumn>
-			<TotalPointsColumn onClick={() => onHeadingClick('total_points')}>
+			</NameColumnHeading>
+			<TotalPointsColumnHeading
+				sortingKey={sortingKey as string}
+				id="total_points"
+				onClick={handleClick}
+			>
 				Total Points
-			</TotalPointsColumn>
-			<CostColumn onClick={() => onHeadingClick('now_cost')}>
+			</TotalPointsColumnHeading>
+			<CostColumnHeading
+				sortingKey={sortingKey as string}
+				id="now_cost"
+				onClick={handleClick}
+			>
 				Current Cost
-			</CostColumn>
+			</CostColumnHeading>
 		</HeadingContainer>
 	);
 };
