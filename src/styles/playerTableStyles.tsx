@@ -20,14 +20,14 @@ export const HeadingContainer = styled(EntryContainer)`
 	color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const NameColumn = styled.div`
-	width: 150px;
+const Column = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 `;
 
-export const NameColumnHeading = styled(NameColumn)<{
+const Heading = styled(Column)<{
 	id: string;
 	sortingKey: string;
 }>`
@@ -37,36 +37,23 @@ export const NameColumnHeading = styled(NameColumn)<{
 	}
 `;
 
-export const TotalPointsColumn = styled.div`
-	width: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+export const NameColumn = styled(Column)`
+	width: 20%;
+`;
+export const NameColumnHeading = styled(Heading)`
+	width: 20%;
 `;
 
-export const TotalPointsColumnHeading = styled(TotalPointsColumn)<{
-	id: string;
-	sortingKey: string;
-}>`
-	background-color: ${(p) => (p.id === p.sortingKey ? '#093249' : '#46A2C3')};
-	&:hover {
-		background-color: ${({ theme }) => theme.colors.button};
-	}
+export const TotalPointsColumn = styled(Column)`
+	width: 15%;
+`;
+export const TotalPointsColumnHeading = styled(Heading)`
+	width: 15%;
 `;
 
-export const CostColumn = styled.div`
-	width: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+export const CostColumn = styled(Column)`
+	width: 15%;
 `;
-
-export const CostColumnHeading = styled(CostColumn)<{
-	id: string;
-	sortingKey: string;
-}>`
-	background-color: ${(p) => (p.id === p.sortingKey ? '#093249' : '#46A2C3')};
-	&:hover {
-		background-color: ${({ theme }) => theme.colors.button};
-	}
+export const CostColumnHeading = styled(Heading)`
+	width: 15%;
 `;
