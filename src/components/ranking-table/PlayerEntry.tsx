@@ -1,18 +1,20 @@
 import React from 'react';
-import {
-	CostColumn,
-	EntryContainer,
-	NameColumn,
-	TotalPointsColumn,
-} from '../../styles/playerTableStyles';
+import { useTheme } from 'styled-components';
+import { Column, EntryContainer } from '../../styles/playerTableStyles';
 import { Player } from '../../types';
 
 export const PlayerEntry: React.FC<{ player: Player }> = ({ player }) => {
+	const theme = useTheme();
+
 	return (
 		<EntryContainer>
-			<NameColumn>{player.web_name}</NameColumn>
-			<TotalPointsColumn>{player.total_points}</TotalPointsColumn>
-			<CostColumn>{player.now_cost / 10}</CostColumn>
+			<Column width={theme.columnWidth.name}>{player.web_name}</Column>
+			<Column width={theme.columnWidth.totalPoints}>
+				{player.total_points}
+			</Column>
+			<Column width={theme.columnWidth.nowCost}>
+				{player.now_cost / 10}
+			</Column>
 		</EntryContainer>
 	);
 };

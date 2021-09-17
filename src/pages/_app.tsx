@@ -1,5 +1,9 @@
 import type { AppProps } from 'next/app';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import {
+	createGlobalStyle,
+	DefaultTheme,
+	ThemeProvider,
+} from 'styled-components';
 import { Layout } from '../components/Layout';
 
 const GlobalStyle = createGlobalStyle`
@@ -17,7 +21,7 @@ body{
 }
 `;
 
-const theme = {
+const theme: DefaultTheme = {
 	colors: {
 		primary: '#F0F9FA',
 		secondary: '#46A2C3',
@@ -27,6 +31,11 @@ const theme = {
 	fontSize: {
 		title: '20px',
 		table: '12px',
+	},
+	columnWidth: {
+		name: '25%',
+		totalPoints: '17.5%',
+		nowCost: '17.5%',
 	},
 };
 

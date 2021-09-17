@@ -1,9 +1,8 @@
 import React from 'react';
+import { useTheme } from 'styled-components';
 import {
-	CostColumnHeading,
+	ColumnHeading,
 	HeadingContainer,
-	NameColumnHeading,
-	TotalPointsColumnHeading,
 } from '../../styles/playerTableStyles';
 import { playerProp } from '../../types';
 
@@ -16,6 +15,8 @@ export const TableHeadings: React.FC<TableHeadingsProps> = ({
 	onHeadingClick,
 	sortingKey,
 }) => {
+	const theme = useTheme();
+
 	const handleClick = (e: React.MouseEvent<HTMLElement>) => {
 		const id = e.currentTarget.id as playerProp;
 		onHeadingClick(id);
@@ -23,27 +24,30 @@ export const TableHeadings: React.FC<TableHeadingsProps> = ({
 
 	return (
 		<HeadingContainer>
-			<NameColumnHeading
+			<ColumnHeading
+				width={theme.columnWidth.name}
 				sortingKey={sortingKey as string}
 				id="web_name"
 				onClick={handleClick}
 			>
 				Player Name
-			</NameColumnHeading>
-			<TotalPointsColumnHeading
+			</ColumnHeading>
+			<ColumnHeading
+				width={theme.columnWidth.totalPoints}
 				sortingKey={sortingKey as string}
 				id="total_points"
 				onClick={handleClick}
 			>
 				Total Points
-			</TotalPointsColumnHeading>
-			<CostColumnHeading
+			</ColumnHeading>
+			<ColumnHeading
+				width={theme.columnWidth.nowCost}
 				sortingKey={sortingKey as string}
 				id="now_cost"
 				onClick={handleClick}
 			>
 				Current Cost
-			</CostColumnHeading>
+			</ColumnHeading>
 		</HeadingContainer>
 	);
 };
