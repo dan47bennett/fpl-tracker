@@ -15,6 +15,12 @@ export const PlayerEntry: React.FC<{ player: Player }> = ({ player }) => {
 			<Column width={theme.columnWidth.nowCost}>
 				{player.now_cost / 10}
 			</Column>
+			<Column width={theme.columnWidth.pointsPerGame}>
+				{player.points_per_game}
+			</Column>
+			<Column width={theme.columnWidth.ppgPerMillion}>
+				{player.ppg_per_million}
+			</Column>
 		</EntryContainer>
 	);
 };

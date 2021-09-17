@@ -36,6 +36,8 @@ const theme: DefaultTheme = {
 		name: '25%',
 		totalPoints: '17.5%',
 		nowCost: '17.5%',
+		pointsPerGame: '10%',
+		ppgPerMillion: '15%',
 	},
 };
 

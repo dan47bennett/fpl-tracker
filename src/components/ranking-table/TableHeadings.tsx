@@ -48,6 +48,22 @@ export const TableHeadings: React.FC<TableHeadingsProps> = ({
 			>
 				Current Cost
 			</ColumnHeading>
+			<ColumnHeading
+				width={theme.columnWidth.pointsPerGame}
+				sortingKey={sortingKey as string}
+				id="points_per_game"
+				onClick={handleClick}
+			>
+				PPG
+			</ColumnHeading>
+			<ColumnHeading
+				width={theme.columnWidth.ppgPerMillion}
+				sortingKey={sortingKey as string}
+				id="ppg_per_million"
+				onClick={handleClick}
+			>
+				PPG per £M
+			</ColumnHeading>
 		</HeadingContainer>
 	);
 };

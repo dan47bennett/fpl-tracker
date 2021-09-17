@@ -13,7 +13,7 @@ export interface PlayerSortProps {
 	own_goals: number;
 	penalties_missed: number;
 	penalties_saved: number;
-	points_per_game: string;
+	points_per_game: number;
 	red_cards: number;
 	saves: number;
 	second_name: string;
@@ -27,6 +27,7 @@ export interface PlayerSortProps {
 	value_season: string;
 	yellow_cards: number;
 	web_name: string;
+	ppg_per_million: string;
 }
 
 export type playerProp = keyof PlayerSortProps;
