@@ -64,6 +64,14 @@ export const TableHeadings: React.FC<TableHeadingsProps> = ({
 			>
 				PPG per £M
 			</ColumnHeading>
+			<ColumnHeading
+				width={theme.columnWidth.form}
+				sortingKey={sortingKey as string}
+				id="form"
+				onClick={handleClick}
+			>
+				Form
+			</ColumnHeading>
 		</HeadingContainer>
 	);
 };

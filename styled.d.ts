@@ -19,6 +19,7 @@ declare module 'styled-components' {
 			nowCost: string;
 			pointsPerGame: string;
 			ppgPerMillion: string;
+			form: string;
 		};
 	}
 }

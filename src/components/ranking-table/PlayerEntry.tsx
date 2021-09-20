@@ -21,6 +21,7 @@ export const PlayerEntry: React.FC<{ player: Player }> = ({ player }) => {
 			<Column width={theme.columnWidth.ppgPerMillion}>
 				{player.ppg_per_million}
 			</Column>
+			<Column width={theme.columnWidth.form}>{player.form}</Column>
 		</EntryContainer>
 	);
 };

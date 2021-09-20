@@ -34,10 +34,11 @@ const theme: DefaultTheme = {
 	},
 	columnWidth: {
 		name: '25%',
-		totalPoints: '17.5%',
-		nowCost: '17.5%',
-		pointsPerGame: '10%',
+		totalPoints: '15%',
+		nowCost: '15%',
+		pointsPerGame: '15%',
 		ppgPerMillion: '15%',
+		form: '15%',
 	},
 };
 
