@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { url } from './config';
 import { Player } from './types';
+import cleanPlayerData from './utils/cleanPlayerData';
 
 axios.create({
 	headers: {
@@ -12,15 +13,9 @@ export const getAllPlayerInfo = async (): Promise<Player[]> => {
 	const info = await axios.get(url.general);
 	const players = info.data.elements;
 
-	for (let i = 0; i < players.length; i++) {
-		const player = players[i];
-		const ppg = parseFloat(player.points_per_game);
-		const cost = player.now_cost / 10;
-		const ppgPerMillion = (ppg / cost).toFixed(2);
-		player.ppg_per_million = ppgPerMillion;
+	cleanPlayerData(players);
 
-		player.points_per_game = parseFloat(player.points_per_game);
-	}
+	console.log('players: ', players);
 
 	return players;
 };

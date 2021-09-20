@@ -3,6 +3,7 @@ export interface PlayerSortProps {
 	bonus: number;
 	bps: number;
 	clean_sheets: number;
+	element_type: number;
 	event_points: number;
 	form: string;
 	goals_conceded: number;
@@ -14,10 +15,14 @@ export interface PlayerSortProps {
 	penalties_missed: number;
 	penalties_saved: number;
 	points_per_game: number;
+	position?: string;
+	ppg_per_million: string;
 	red_cards: number;
 	saves: number;
 	second_name: string;
 	selected_by_percent: string;
+	team: number;
+	team_name?: string;
 	total_points: number;
 	transfers_in: number;
 	transfers_in_event: number;
@@ -27,7 +32,6 @@ export interface PlayerSortProps {
 	value_season: string;
 	yellow_cards: number;
 	web_name: string;
-	ppg_per_million: string;
 }
 
 export type playerProp = keyof PlayerSortProps;
@@ -48,7 +52,6 @@ export interface Player extends PlayerSortProps {
 	direct_freekicks_order: number | null;
 	direct_freekicks_text: string;
 	dreamteam_count: number;
-	element_type: number;
 	ep_next: string;
 	ep_this: string;
 	first_name: string;
@@ -67,7 +70,6 @@ export interface Player extends PlayerSortProps {
 	special: boolean;
 	squad_number: number | null;
 	status: string;
-	team: number;
 	team_code: number;
 	threat: string;
 	threat_rank: number;
