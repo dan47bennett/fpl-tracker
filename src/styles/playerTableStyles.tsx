@@ -28,6 +28,29 @@ export const Column = styled.div<{ width: string }>`
 	text-align: center;
 `;
 
+export const PageSelectionContainer = styled.div`
+	margin: 5px 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+`;
+
+export const PageChoiceButton = styled.div`
+	margin: 0 2%;
+	background-color: ${({ theme }) => theme.colors.primary};
+	&:hover {
+		background-color: ${({ theme }) => theme.colors.button};
+	}
+`;
+
+export const CurrentPageDisplay = styled.div`
+	margin: 0 2%;
+	background-color: ${({ theme }) => theme.colors.primary};
+`;
+
 export const ColumnHeading = styled(Column)<{
 	id: string;
 	sortingKey: string;
