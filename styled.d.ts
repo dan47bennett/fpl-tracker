@@ -14,12 +14,14 @@ declare module 'styled-components' {
 			table: string;
 		};
 		columnWidth: {
+			form: string;
 			name: string;
-			totalPoints: string;
 			nowCost: string;
 			pointsPerGame: string;
+			position: string;
 			ppgPerMillion: string;
-			form: string;
+			teamName: string;
+			totalPoints: string;
 		};
 	}
 }

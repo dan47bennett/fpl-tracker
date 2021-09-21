@@ -8,14 +8,14 @@ const positionConversion = (player: Player) => {
 		return 'DEF';
 	} else if (player.element_type === 3) {
 		return 'MID';
-	} else if (player.element_type === 1) {
+	} else if (player.element_type === 4) {
 		return 'FWD';
 	}
 };
 
 const teamConversion = (player: Player) => {
 	const teamCode = player.team;
-	const teamName = teamNames[teamCode - 1];
+	const teamName = teamNames[teamCode];
 	return teamName;
 };
 

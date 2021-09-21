@@ -33,6 +33,22 @@ export const TableHeadings: React.FC<TableHeadingsProps> = ({
 				Player Name
 			</ColumnHeading>
 			<ColumnHeading
+				width={theme.columnWidth.teamName}
+				sortingKey={sortingKey as string}
+				id="team_name"
+				onClick={handleClick}
+			>
+				Team
+			</ColumnHeading>
+			<ColumnHeading
+				width={theme.columnWidth.position}
+				sortingKey={sortingKey as string}
+				id="position"
+				onClick={handleClick}
+			>
+				Position
+			</ColumnHeading>
+			<ColumnHeading
 				width={theme.columnWidth.totalPoints}
 				sortingKey={sortingKey as string}
 				id="total_points"

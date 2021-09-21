@@ -9,6 +9,12 @@ export const PlayerEntry: React.FC<{ player: Player }> = ({ player }) => {
 	return (
 		<EntryContainer>
 			<Column width={theme.columnWidth.name}>{player.web_name}</Column>
+			<Column width={theme.columnWidth.teamName}>
+				{player.team_name}
+			</Column>
+			<Column width={theme.columnWidth.position}>
+				{player.position}
+			</Column>
 			<Column width={theme.columnWidth.totalPoints}>
 				{player.total_points}
 			</Column>

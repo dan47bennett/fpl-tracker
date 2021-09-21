@@ -15,7 +15,5 @@ export const getAllPlayerInfo = async (): Promise<Player[]> => {
 
 	cleanPlayerData(players);
 
-	console.log('players: ', players);
-
 	return players;
 };
