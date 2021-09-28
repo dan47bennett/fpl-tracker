@@ -2,6 +2,8 @@
 
 A site showing metrics for Fantasy Premier League using the FPL API. Built in Next.js with Typescript.
 
+Hosted at https://fpl-tracker.vercel.app/
+
 ## Development
 
 To run the development server at [localhost:3000](http://localhost:3000) run the command
