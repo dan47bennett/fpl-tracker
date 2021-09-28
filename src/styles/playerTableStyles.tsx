@@ -39,6 +39,8 @@ export const PageSelectionContainer = styled.div`
 `;
 
 export const PageChoiceButton = styled.div`
+	border-radius: 25px;
+	border: 2px solid;
 	margin: 0 2%;
 	background-color: ${({ theme }) => theme.colors.primary};
 	&:hover {
