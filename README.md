@@ -13,7 +13,10 @@ npm run dev
 ### Tasks
 
 -   [x] Initial Next build
--   [ ] Basic design/UX concept
+-   [x] Basic design/UX concept
+-   [ ] Host site
+-   [ ] Add player page
+-   [ ] Mobile site design
 -   [ ] Decide what metrics are important to show: basic provided by API or additional
 
 -   Metric ideas:
