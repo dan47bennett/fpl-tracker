@@ -1,5 +1,5 @@
 import React from 'react';
-import { Player } from '../../types';
+import { Player } from '../../../types';
 import { PlayerEntry } from './PlayerEntry';
 
 export const PlayerTable: React.FC<{ players: Player[] }> = ({ players }) => {

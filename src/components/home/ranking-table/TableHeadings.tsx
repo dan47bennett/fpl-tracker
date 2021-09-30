@@ -3,8 +3,8 @@ import { useTheme } from 'styled-components';
 import {
 	ColumnHeading,
 	HeadingContainer,
-} from '../../styles/playerTableStyles';
-import { playerProp } from '../../types';
+} from '../../../styles/playerTableStyles';
+import { playerProp } from '../../../types';
 
 interface TableHeadingsProps {
 	onHeadingClick: (sortProp: playerProp) => void;

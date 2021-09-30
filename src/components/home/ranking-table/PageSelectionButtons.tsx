@@ -3,7 +3,7 @@ import {
 	CurrentPageDisplay,
 	PageChoiceButton,
 	PageSelectionContainer,
-} from '../../styles/playerTableStyles';
+} from '../../../styles/playerTableStyles';
 
 interface PageSelectionButtonsProps {
 	onClickPrev: () => void;

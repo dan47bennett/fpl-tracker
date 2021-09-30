@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
-import { Column, EntryContainer } from '../../styles/playerTableStyles';
-import { Player } from '../../types';
+import { Column, EntryContainer } from '../../../styles/playerTableStyles';
+import { Player } from '../../../types';
 
 export const PlayerEntry: React.FC<{ player: Player }> = ({ player }) => {
 	const theme = useTheme();

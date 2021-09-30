@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { TableContainer } from '../../styles/playerTableStyles';
-import { Player, playerProp } from '../../types';
-import { sortByKey } from '../../utils/sortByKey';
+import { TableContainer } from '../../../styles/playerTableStyles';
+import { Player, playerProp } from '../../../types';
+import { sortByKey } from '../../../utils/sortByKey';
 import { PageSelectionButtons } from './PageSelectionButtons';
 import { PlayerTable } from './PlayerTable';
 import { TableHeadings } from './TableHeadings';
