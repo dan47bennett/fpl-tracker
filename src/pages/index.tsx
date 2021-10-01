@@ -1,22 +1,32 @@
 import type { NextPage } from 'next';
-import React, { useEffect, useState } from 'react';
-import { getAllPlayerInfo } from '../api';
+import React from 'react';
 import { RankingTable } from '../components/home/ranking-table/RankingTable';
+import { url } from '../config';
 import { Player } from '../types';
+import cleanPlayerData from '../utils/cleanPlayerData';
 
-const Index: NextPage = () => {
-	const [allData, setAllData] = useState<Player[]>([]);
+interface IndexProps {
+	players: any[];
+}
 
-	const loadData = async () => {
-		const info = await getAllPlayerInfo();
-		setAllData(info);
-	};
-
-	useEffect(() => {
-		loadData();
-	}, []);
-
-	return <RankingTable playersPerPage={20} players={allData} />;
+const Index: NextPage<IndexProps> = ({ players }) => {
+	return <RankingTable playersPerPage={20} players={players} />;
 };
+
+export async function getStaticProps() {
+	const playerData = await fetch(url.general, {
+		headers: { 'User-Agent': 'ANYTHING_WILL_WORK_HERE' },
+	});
+	const playerJson = await playerData.json();
+	const players = playerJson.elements as Player[];
+	cleanPlayerData(players);
+
+	return {
+		props: {
+			players,
+		},
+		revalidate: 60 * 30,
+	};
+}
 
 export default Index;
