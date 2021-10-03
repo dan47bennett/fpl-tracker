@@ -23,8 +23,8 @@ const cleanPlayerData = (players: Player[]) => {
 	for (let i = 0; i < players.length; i++) {
 		const player = players[i];
 		const ppg = parseFloat(player.points_per_game.toString());
-		const cost = player.now_cost / 10;
-		const ppgPerMillion = (ppg / cost).toFixed(2);
+		player.now_cost = player.now_cost / 10;
+		const ppgPerMillion = (ppg / player.now_cost).toFixed(2);
 		player.ppg_per_million = ppgPerMillion;
 
 		player.points_per_game = ppg;
