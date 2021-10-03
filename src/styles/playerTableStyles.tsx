@@ -1,31 +1,41 @@
 import styled from 'styled-components';
 
-export const TableContainer = styled.div`
+export const RankingTableContainer = styled.div`
 	margin: 20px auto;
 	width: 90%;
 	font-size: ${({ theme }) => theme.fontSize.table};
 `;
 
-export const EntryContainer = styled.div`
+export const TableContainer = styled.div`
 	width: 100%;
-	background-color: ${({ theme }) => theme.colors.alt};
-	height: 30px;
-	margin: 2px auto;
 	display: flex;
 	flex-direction: row;
 `;
 
-export const HeadingContainer = styled(EntryContainer)`
-	background-color: ${({ theme }) => theme.colors.secondary};
-	color: ${({ theme }) => theme.colors.primary};
+export const ColumnContainer = styled.div<{ width: string }>`
+	width: ${(p) => p.width};
+	display: flex;
+	flex-direction: column;
 `;
 
-export const Column = styled.div<{ width: string }>`
-	width: ${(p) => p.width};
+export const Column = styled.div`
+	width: 100%;
+	height: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	background-color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const ColumnHeading = styled(Column)<{
+	id: string;
+	sortingKey: string;
+}>`
+	background-color: ${(p) => (p.id === p.sortingKey ? '#093249' : '#46A2C3')};
+	&:hover {
+		background-color: ${({ theme }) => theme.colors.button};
+	}
 `;
 
 export const PageSelectionContainer = styled.div`
@@ -51,16 +61,4 @@ export const PageChoiceButton = styled.div`
 export const CurrentPageDisplay = styled.div`
 	margin: 0 2%;
 	background-color: ${({ theme }) => theme.colors.primary};
-`;
-
-export const ColumnHeading = styled(Column)<{
-	id: string;
-	sortingKey: string;
-	width: string;
-}>`
-	width: ${(p) => p.width};
-	background-color: ${(p) => (p.id === p.sortingKey ? '#093249' : '#46A2C3')};
-	&:hover {
-		background-color: ${({ theme }) => theme.colors.button};
-	}
 `;
