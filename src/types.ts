@@ -22,6 +22,7 @@ export interface PlayerSortProps {
 	second_name: string;
 	selected_by_percent: string;
 	team: number;
+	team_abbr?: string;
 	team_name?: string;
 	total_points: number;
 	transfers_in: number;

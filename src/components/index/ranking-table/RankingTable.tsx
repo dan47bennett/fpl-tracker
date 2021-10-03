@@ -56,7 +56,7 @@ export const RankingTable: React.FC<{
 				<ScrollTable>
 					<StatColumn
 						title="Team"
-						id="team_name"
+						id="team_abbr"
 						onHeadingClick={onHeadingClick}
 						sortingKey={sortingKey}
 						data={displayData}

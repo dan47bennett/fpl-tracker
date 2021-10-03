@@ -29,3 +29,26 @@ export const teamNames: Record<number, string> = {
 	19: 'West Ham',
 	20: 'Wolves',
 };
+
+export const teamAbbrs: Record<string, string> = {
+	Arsenal: 'ARS',
+	'Aston Villa': 'AVL',
+	Brentford: 'BRE',
+	Brighton: 'BHA',
+	Burnley: 'BUR',
+	Chelsea: 'CHE',
+	'Crystal Palace': 'CRY',
+	Everton: 'EVE',
+	'Leeds United': 'LEE',
+	Leicester: 'LEI',
+	Liverpool: 'LIV',
+	'Man City': 'MNC',
+	'Man United': 'MNU',
+	Newcastle: 'NEW',
+	Norwich: 'NOR',
+	Southampton: 'SOU',
+	Spurs: 'TOT',
+	Watford: 'WAT',
+	'West Ham': 'WHU',
+	Wolves: 'WOL',
+};

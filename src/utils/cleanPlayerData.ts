@@ -1,4 +1,4 @@
-import { teamNames } from '../config';
+import { teamNames, teamAbbrs } from '../config';
 import { Player } from '../types';
 
 const positionConversion = (player: Player) => {
@@ -19,6 +19,12 @@ const teamConversion = (player: Player) => {
 	return teamName;
 };
 
+const getAbbreviation = (player: Player) => {
+	const teamName = player.team_name as string;
+	const teamAbbr = teamAbbrs[teamName];
+	return teamAbbr;
+};
+
 const cleanPlayerData = (players: Player[]) => {
 	for (let i = 0; i < players.length; i++) {
 		const player = players[i];
@@ -33,6 +39,7 @@ const cleanPlayerData = (players: Player[]) => {
 
 		player.position = positionConversion(player);
 		player.team_name = teamConversion(player);
+		player.team_abbr = getAbbreviation(player);
 	}
 };
 
