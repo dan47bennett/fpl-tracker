@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
-import { RankingTable } from '../components/home/ranking-table/RankingTable';
+import { RankingTable } from '../components/index/ranking-table/RankingTable';
 import { url } from '../config';
 import { Player } from '../types';
 import cleanPlayerData from '../utils/cleanPlayerData';
