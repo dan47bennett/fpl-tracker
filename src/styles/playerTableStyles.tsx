@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const RankingTableContainer = styled.div`
 	margin: 20px auto;
-	width: 90%;
+	width: 95%;
 	font-size: ${({ theme }) => theme.fontSize.table};
 `;
 
@@ -14,8 +14,15 @@ export const TableContainer = styled.div`
 
 export const ColumnContainer = styled.div<{ width: string }>`
 	width: ${(p) => p.width};
+	min-width: 120px;
 	display: flex;
 	flex-direction: column;
+`;
+
+export const ScrollTable = styled.div`
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
 `;
 
 export const Column = styled.div`

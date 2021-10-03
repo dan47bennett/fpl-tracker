@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
 	RankingTableContainer,
+	ScrollTable,
 	TableContainer,
 } from '../../../styles/playerTableStyles';
 import { Player, playerProp } from '../../../types';
@@ -52,62 +53,64 @@ export const RankingTable: React.FC<{
 					data={displayData}
 					width={theme.columnWidth.name}
 				/>
-				<StatColumn
-					title="Team"
-					id="team_name"
-					onHeadingClick={onHeadingClick}
-					sortingKey={sortingKey}
-					data={displayData}
-					width={theme.columnWidth.teamName}
-				/>
-				<StatColumn
-					title="Position"
-					id="position"
-					onHeadingClick={onHeadingClick}
-					sortingKey={sortingKey}
-					data={displayData}
-					width={theme.columnWidth.teamName}
-				/>
-				<StatColumn
-					title="Total Points"
-					id="total_points"
-					onHeadingClick={onHeadingClick}
-					sortingKey={sortingKey}
-					data={displayData}
-					width={theme.columnWidth.teamName}
-				/>
-				<StatColumn
-					title="Current Cost"
-					id="now_cost"
-					onHeadingClick={onHeadingClick}
-					sortingKey={sortingKey}
-					data={displayData}
-					width={theme.columnWidth.teamName}
-				/>
-				<StatColumn
-					title="PPG"
-					id="points_per_game"
-					onHeadingClick={onHeadingClick}
-					sortingKey={sortingKey}
-					data={displayData}
-					width={theme.columnWidth.teamName}
-				/>
-				<StatColumn
-					title="PPG per £M"
-					id="ppg_per_million"
-					onHeadingClick={onHeadingClick}
-					sortingKey={sortingKey}
-					data={displayData}
-					width={theme.columnWidth.teamName}
-				/>
-				<StatColumn
-					title="Form"
-					id="form"
-					onHeadingClick={onHeadingClick}
-					sortingKey={sortingKey}
-					data={displayData}
-					width={theme.columnWidth.teamName}
-				/>
+				<ScrollTable>
+					<StatColumn
+						title="Team"
+						id="team_name"
+						onHeadingClick={onHeadingClick}
+						sortingKey={sortingKey}
+						data={displayData}
+						width={theme.columnWidth.teamName}
+					/>
+					<StatColumn
+						title="Position"
+						id="position"
+						onHeadingClick={onHeadingClick}
+						sortingKey={sortingKey}
+						data={displayData}
+						width={theme.columnWidth.teamName}
+					/>
+					<StatColumn
+						title="Total Points"
+						id="total_points"
+						onHeadingClick={onHeadingClick}
+						sortingKey={sortingKey}
+						data={displayData}
+						width={theme.columnWidth.teamName}
+					/>
+					<StatColumn
+						title="Current Cost"
+						id="now_cost"
+						onHeadingClick={onHeadingClick}
+						sortingKey={sortingKey}
+						data={displayData}
+						width={theme.columnWidth.teamName}
+					/>
+					<StatColumn
+						title="PPG"
+						id="points_per_game"
+						onHeadingClick={onHeadingClick}
+						sortingKey={sortingKey}
+						data={displayData}
+						width={theme.columnWidth.teamName}
+					/>
+					<StatColumn
+						title="PPG per £M"
+						id="ppg_per_million"
+						onHeadingClick={onHeadingClick}
+						sortingKey={sortingKey}
+						data={displayData}
+						width={theme.columnWidth.teamName}
+					/>
+					<StatColumn
+						title="Form"
+						id="form"
+						onHeadingClick={onHeadingClick}
+						sortingKey={sortingKey}
+						data={displayData}
+						width={theme.columnWidth.teamName}
+					/>
+				</ScrollTable>
 			</TableContainer>
 			<PageSelectionButtons
 				onClickPrev={() => {
