@@ -6,7 +6,7 @@ import { Player } from '../types';
 import cleanPlayerData from '../utils/cleanPlayerData';
 
 interface IndexProps {
-	players: any[];
+	players: Player[];
 }
 
 const Index: NextPage<IndexProps> = ({ players }) => {
