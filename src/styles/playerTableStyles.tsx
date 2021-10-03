@@ -10,6 +10,7 @@ export const TableContainer = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 `;
 
 export const ColumnContainer = styled.div<{ width: string }>`
@@ -22,7 +23,12 @@ export const ColumnContainer = styled.div<{ width: string }>`
 export const ScrollTable = styled.div`
 	display: flex;
 	flex-direction: row;
-	overflow-x: scroll;
+	@media only screen and (max-width: 900px) {
+		overflow-x: scroll;
+	}
+	& > div {
+		min-width: 100px;
+	}
 `;
 
 export const Column = styled.div`
