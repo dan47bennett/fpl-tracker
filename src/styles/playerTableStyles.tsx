@@ -40,8 +40,10 @@ export const ColumnHeading = styled(Column)<{
 	sortingKey: string;
 }>`
 	background-color: ${(p) => (p.id === p.sortingKey ? '#093249' : '#46A2C3')};
+	color: ${(p) => (p.id === p.sortingKey ? '#F0F9FA' : '#093249')};
 	&:hover {
 		background-color: ${({ theme }) => theme.colors.button};
+		color: ${({ theme }) => theme.colors.primary};
 	}
 `;
 
