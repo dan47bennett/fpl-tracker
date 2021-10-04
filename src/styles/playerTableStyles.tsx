@@ -13,8 +13,8 @@ export const TableContainer = styled.div`
 	justify-content: center;
 `;
 
-export const ColumnContainer = styled.div<{ width: string }>`
-	width: ${(p) => p.width};
+export const ColumnContainer = styled.div`
+	width: 12.5%;
 	min-width: 120px;
 	display: flex;
 	flex-direction: column;

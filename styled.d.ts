@@ -13,15 +13,5 @@ declare module 'styled-components' {
 			title: string;
 			table: string;
 		};
-		columnWidth: {
-			form: string;
-			name: string;
-			nowCost: string;
-			pointsPerGame: string;
-			position: string;
-			ppgPerMillion: string;
-			teamName: string;
-			totalPoints: string;
-		};
 	}
 }

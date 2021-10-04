@@ -32,16 +32,6 @@ const theme: DefaultTheme = {
 		title: '20px',
 		table: '12px',
 	},
-	columnWidth: {
-		form: '11.5%',
-		name: '17.5%',
-		nowCost: '11.5%',
-		pointsPerGame: '11.5%',
-		position: '12.5%',
-		ppgPerMillion: '11.5%',
-		teamName: '12.5%',
-		totalPoints: '11.5%',
-	},
 };
 
 function MyApp({ Component, pageProps }: AppProps) {

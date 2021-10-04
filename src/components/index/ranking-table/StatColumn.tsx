@@ -13,7 +13,6 @@ interface StatColumnProps {
 	onHeadingClick: (sortProp: playerProp) => void;
 	sortingKey: playerProp;
 	data: Player[];
-	width: string;
 }
 
 export const StatColumn: React.FC<StatColumnProps> = ({
@@ -22,10 +21,9 @@ export const StatColumn: React.FC<StatColumnProps> = ({
 	onHeadingClick,
 	sortingKey,
 	data,
-	width,
 }) => {
 	return (
-		<ColumnContainer width={width}>
+		<ColumnContainer>
 			<TableHeading
 				title={title}
 				id={id}
