@@ -8,7 +8,15 @@ import { Player, playerProp } from '../../../types';
 import { sortByKey } from '../../../utils/sortByKey';
 import { PageSelectionButtons } from './PageSelectionButtons';
 import { StatColumn } from './StatColumn';
-import { useTheme } from 'styled-components';
+
+const statsToShow = [
+	{ title: 'Team', id: 'team_abbr' },
+	{ title: 'Position', id: 'position' },
+	{ title: 'Total Points', id: 'total_points' },
+	{ title: 'PPG', id: 'points_per_game' },
+	{ title: 'PPG per £M', id: 'ppg_per_million' },
+	{ title: 'Form', id: 'form' },
+];
 
 export const RankingTable: React.FC<{
 	players: Player[];
@@ -18,8 +26,6 @@ export const RankingTable: React.FC<{
 	const [displayData, setDisplayData] = useState<Player[]>([]);
 	const [page, setPage] = useState(0);
 	const [reverse, setReverse] = useState(false);
-
-	const theme = useTheme();
 
 	useEffect(() => {
 		if (players) {
@@ -51,65 +57,18 @@ export const RankingTable: React.FC<{
 					onHeadingClick={onHeadingClick}
 					sortingKey={sortingKey}
 					data={displayData}
-					width={theme.columnWidth.name}
 				/>
 				<ScrollTable>
-					<StatColumn
-						title="Team"
-						id="team_abbr"
-						onHeadingClick={onHeadingClick}
-						sortingKey={sortingKey}
-						data={displayData}
-						width={theme.columnWidth.teamName}
-					/>
-					<StatColumn
-						title="Position"
-						id="position"
-						onHeadingClick={onHeadingClick}
-						sortingKey={sortingKey}
-						data={displayData}
-						width={theme.columnWidth.teamName}
-					/>
-					<StatColumn
-						title="Total Points"
-						id="total_points"
-						onHeadingClick={onHeadingClick}
-						sortingKey={sortingKey}
-						data={displayData}
-						width={theme.columnWidth.teamName}
-					/>
-					<StatColumn
-						title="Current Cost"
-						id="now_cost"
-						onHeadingClick={onHeadingClick}
-						sortingKey={sortingKey}
-						data={displayData}
-						width={theme.columnWidth.teamName}
-					/>
-					<StatColumn
-						title="PPG"
-						id="points_per_game"
-						onHeadingClick={onHeadingClick}
-						sortingKey={sortingKey}
-						data={displayData}
-						width={theme.columnWidth.teamName}
-					/>
-					<StatColumn
-						title="PPG per £M"
-						id="ppg_per_million"
-						onHeadingClick={onHeadingClick}
-						sortingKey={sortingKey}
-						data={displayData}
-						width={theme.columnWidth.teamName}
-					/>
-					<StatColumn
-						title="Form"
-						id="form"
-						onHeadingClick={onHeadingClick}
-						sortingKey={sortingKey}
-						data={displayData}
-						width={theme.columnWidth.teamName}
-					/>
+					{statsToShow.map((stat) => (
+						<StatColumn
+							key={stat.id}
+							title={stat.title}
+							id={stat.id as playerProp}
+							onHeadingClick={onHeadingClick}
+							sortingKey={sortingKey}
+							data={displayData}
+						/>
+					))}
 				</ScrollTable>
 			</TableContainer>
 			<PageSelectionButtons
