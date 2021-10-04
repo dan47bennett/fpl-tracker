@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
-import { RankingTable } from '../components/index/ranking-table/RankingTable';
+import { PlayerDisplay } from '../components/index/PlayerDisplay';
 import { url } from '../config';
 import { Player } from '../types';
 import cleanPlayerData from '../utils/cleanPlayerData';
@@ -10,7 +10,7 @@ interface IndexProps {
 }
 
 const Index: NextPage<IndexProps> = ({ players }) => {
-	return <RankingTable playersPerPage={20} players={players} />;
+	return <PlayerDisplay players={players} />;
 };
 
 export async function getStaticProps() {

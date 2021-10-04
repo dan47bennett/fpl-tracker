@@ -18,14 +18,17 @@ const statsToShow = [
 	{ title: 'Form', id: 'form' },
 ];
 
-export const RankingTable: React.FC<{
+interface RankingTableProps {
 	players: Player[];
-	playersPerPage: number;
-}> = ({ players, playersPerPage }) => {
+}
+
+export const RankingTable: React.FC<RankingTableProps> = ({ players }) => {
 	const [sortingKey, setSortingKey] = useState<playerProp>('total_points');
 	const [displayData, setDisplayData] = useState<Player[]>([]);
 	const [page, setPage] = useState(0);
 	const [reverse, setReverse] = useState(false);
+
+	const playersPerPage = 20;
 
 	useEffect(() => {
 		if (players) {
@@ -36,7 +39,7 @@ export const RankingTable: React.FC<{
 			);
 			setDisplayData(slicedData);
 		}
-	}, [players, sortingKey, page, reverse, playersPerPage]);
+	}, [players, sortingKey, page, reverse]);
 
 	const onHeadingClick = (sortProp: playerProp) => {
 		if (sortProp === sortingKey) {
