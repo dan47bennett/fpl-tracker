@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColumnHeading } from '../../../styles/playerTableStyles';
+import { HeadingCell } from '../../../styles/playerTableStyles';
 import { playerProp } from '../../../types';
 
 interface TableHeadingProps {
@@ -21,12 +21,12 @@ export const TableHeading: React.FC<TableHeadingProps> = ({
 	};
 
 	return (
-		<ColumnHeading
+		<HeadingCell
 			sortingKey={sortingKey as string}
 			id={id as string}
 			onClick={handleClick}
 		>
 			{title}
-		</ColumnHeading>
+		</HeadingCell>
 	);
 };

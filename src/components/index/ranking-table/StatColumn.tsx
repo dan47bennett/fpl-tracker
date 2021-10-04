@@ -1,7 +1,11 @@
 import React from 'react';
 import { Player, playerProp } from '../../../types';
 import { TableHeading } from './TableHeading';
-import { ColumnContainer, Column } from '../../../styles/playerTableStyles';
+import {
+	ColumnContainer,
+	Cell,
+	Column,
+} from '../../../styles/playerTableStyles';
 
 interface StatColumnProps {
 	title: string;
@@ -28,9 +32,11 @@ export const StatColumn: React.FC<StatColumnProps> = ({
 				onHeadingClick={onHeadingClick}
 				sortingKey={sortingKey}
 			></TableHeading>
-			{data.map((player) => (
-				<Column key={player.id}>{player[id]}</Column>
-			))}
+			<Column sortingKey={sortingKey} id={id}>
+				{data.map((player) => (
+					<Cell key={player.id}>{player[id]}</Cell>
+				))}
+			</Column>
 		</ColumnContainer>
 	);
 };

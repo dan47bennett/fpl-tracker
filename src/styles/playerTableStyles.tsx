@@ -31,7 +31,7 @@ export const ScrollTable = styled.div`
 	}
 `;
 
-export const Column = styled.div`
+export const Cell = styled.div`
 	width: 100%;
 	height: 20px;
 	display: flex;
@@ -41,7 +41,24 @@ export const Column = styled.div`
 	background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const ColumnHeading = styled(Column)<{
+export const Column = styled.div<{
+	id: string;
+	sortingKey: string;
+}>`
+	& > div {
+		background-color: ${(p) =>
+			p.id === p.sortingKey ? '#E5E5E5' : '#F0F9FA'};
+	}
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+`;
+
+export const HeadingCell = styled(Cell)<{
 	id: string;
 	sortingKey: string;
 }>`
