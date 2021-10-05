@@ -78,3 +78,84 @@ export interface Player extends PlayerSortProps {
 }
 
 // position - FWD - element_type 4, MID - element_type 3, DEF - element_type 2, GK - element_type 1
+
+interface Fixture {
+	id: number;
+	code: number;
+	team_h: number;
+	team_h_score: null | number;
+	team_a: number;
+	team_a_score: null | number;
+	event: number;
+	finished: boolean;
+	minutes: number;
+	provisional_start_time: boolean;
+	kickoff_time: Date;
+	event_name: string;
+	is_home: boolean;
+	difficulty: number;
+}
+
+interface Result {
+	element: number;
+	fixture: number;
+	opponent_team: number;
+	total_points: number;
+	was_home: boolean;
+	kickoff_time: Date;
+	team_h_score: number;
+	team_a_score: number;
+	round: number;
+	minutes: number;
+	goals_scored: number;
+	assists: number;
+	clean_sheets: number;
+	goals_conceded: number;
+	own_goals: number;
+	penalties_saved: number;
+	penalties_missed: number;
+	yellow_cards: number;
+	red_cards: number;
+	saves: number;
+	bonus: number;
+	bps: number;
+	influence: string;
+	creativity: string;
+	threat: string;
+	ict_index: string;
+	value: number;
+	transfers_balance: number;
+	selected: number;
+	transfers_in: number;
+	transfers_out: number;
+}
+
+interface PastSeason {
+	season_name: string;
+	element_code: number;
+	start_cost: number;
+	end_cost: number;
+	total_points: number;
+	minutes: number;
+	goals_scored: number;
+	assists: number;
+	clean_sheets: number;
+	goals_conceded: number;
+	own_goals: number;
+	penalties_saved: number;
+	penalties_missed: number;
+	yellow_cards: number;
+	red_cards: number;
+	saves: number;
+	bonus: number;
+	bps: number;
+	influence: string;
+	creativity: string;
+	threat: string;
+	ict_index: string;
+}
+export interface FullPlayerProps extends Player {
+	fixtures: Fixture[];
+	history: Result[];
+	history_past: [] | PastSeason[];
+}
