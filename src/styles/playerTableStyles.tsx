@@ -18,7 +18,10 @@ export const SortSelect = styled.select`
 `;
 
 export const RankingTableContainer = styled.div`
-	width: 80%;
+	width: 70%;
+	@media only screen and (max-width: 1000px) {
+		width: 90%;
+	}
 	height: auto;
 	align-items: center;
 	justify-content: center;
