@@ -9,6 +9,14 @@ export const Container = styled.div`
 	text-align: center;
 `;
 
+export const SortSelect = styled.select`
+	width: 100px;
+	margin: 5px auto;
+	background-color: ${({ theme }) => theme.colors.secondary};
+	border-radius: 10px;
+	border: 2px solid;
+`;
+
 export const RankingTableContainer = styled.div`
 	width: 75%;
 	height: auto;

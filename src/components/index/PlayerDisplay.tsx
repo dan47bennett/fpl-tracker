@@ -1,35 +1,79 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Player } from '../../types';
 import { RankingTable } from './ranking-table/RankingTable';
+import { teamAbbrs } from '../../config';
+import { SortSelect } from '../../styles/playerTableStyles';
 
 interface PlayerDisplayProps {
 	players: Player[];
 }
 
-const positions = ['GK', 'DEF', 'MID', 'FWD'];
+const positionInitials = ['GK', 'DEF', 'MID', 'FWD'];
+const positionWords = ['Goalkeepers', 'Defenders', 'Midfielders', 'Forwards'];
+
+const allAbbrs = Object.values(teamAbbrs);
+const allNames = Object.keys(teamAbbrs);
 
 export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
-	const [subset, setSubset] = useState<string>('byPosition');
+	const [positionSort, setPositionSort] = useState('all');
+	const [teamSort, setTeamSort] = useState('all');
+	const [displayData, setDisplayData] = useState(players);
 
-	if (subset === 'all') {
-		return <RankingTable players={players}></RankingTable>;
-	}
-	if (subset === 'byPosition') {
-		return (
-			<>
-				{positions.map((position) => {
-					const displayData = players.filter(
-						(player) => player.position === position
-					);
+	const onChangePosition = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		console.log('e: ', e);
+		const selectedPosition = e.target.value;
+		setPositionSort(selectedPosition);
+	};
+
+	const onChangeTeam = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		const selectedTeam = e.target.value;
+		setTeamSort(selectedTeam);
+		console.log('selectedTeam: ', selectedTeam);
+	};
+
+	useEffect(() => {
+		let filtered = players;
+		if (positionSort !== 'all') {
+			console.log('positionSort: ', positionSort);
+			filtered = filtered.filter(
+				(player) => player.position === positionSort
+			);
+		}
+		if (teamSort !== 'all') {
+			filtered = filtered.filter(
+				(player) => player.team_abbr === teamSort
+			);
+		}
+		setDisplayData(filtered);
+	}, [players, positionSort, teamSort]);
+
+	return (
+		<>
+			<label htmlFor="team-select">Sort by team:</label>
+			<SortSelect id="team-select" onChange={onChangeTeam}>
+				<option value={'all'}>All</option>
+				{allNames.map((name) => {
+					const index = allNames.indexOf(name);
 					return (
-						<RankingTable
-							key={position}
-							players={displayData}
-						></RankingTable>
+						<option key={index} value={allAbbrs[index]}>
+							{name}
+						</option>
 					);
 				})}
-			</>
-		);
-	}
-	return <div>Hi</div>;
+			</SortSelect>
+			<label htmlFor="position-select">Sort by position:</label>
+			<SortSelect id="position-select" onChange={onChangePosition}>
+				<option value={'all'}>All</option>
+				{positionInitials.map((position) => {
+					const index = positionInitials.indexOf(position);
+					return (
+						<option key={index} value={positionInitials[index]}>
+							{positionWords[index]}
+						</option>
+					);
+				})}
+			</SortSelect>
+			<RankingTable players={displayData} />
+		</>
+	);
 };
