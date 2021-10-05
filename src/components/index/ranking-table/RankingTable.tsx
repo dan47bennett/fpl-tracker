@@ -8,6 +8,7 @@ import { Player, playerProp } from '../../../types';
 import { sortByKey } from '../../../utils/sortByKey';
 import { PageSelectionButtons } from './PageSelectionButtons';
 import { StatColumn } from './StatColumn';
+import { NameColumn } from './NameColumn';
 
 const statsToShow = [
 	{ title: 'Team', id: 'team_abbr' },
@@ -54,7 +55,7 @@ export const RankingTable: React.FC<RankingTableProps> = ({ players }) => {
 	return (
 		<RankingTableContainer>
 			<TableContainer>
-				<StatColumn
+				<NameColumn
 					title="Name"
 					id="web_name"
 					onHeadingClick={onHeadingClick}
