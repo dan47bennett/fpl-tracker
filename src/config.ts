@@ -5,6 +5,8 @@ export const maxMobileWidth = 750;
 export const url = {
 	general: `${proxyURL}/fantasy.premierleague.com/api/bootstrap-static/`,
 	players: `${proxyURL}/fantasy.premierleague.com/api/element-summary`, // add element_id after the '/'
+	photo:
+		'https://resources.premierleague.com/premierleague/photos/players/110x140/p',
 };
 
 export const teamNames: Record<number, string> = {

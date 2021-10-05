@@ -3,6 +3,7 @@ import { GetServerSideProps } from 'next';
 import { url } from '../../../config';
 import cleanPlayerData from '../../../utils/cleanPlayerData';
 import { Player, FullPlayerProps } from '../../../types';
+import { Container, PlayerImage } from '../../../styles/profileStyles';
 
 interface PlayerProfileProps {
 	player: FullPlayerProps;
@@ -10,7 +11,14 @@ interface PlayerProfileProps {
 
 const PlayerProfile: React.FC<PlayerProfileProps> = ({ player }) => {
 	console.log('player: ', player);
-	return <div>Player {player.id}</div>;
+	return (
+		<Container>
+			<PlayerImage src={`${url.photo}${player.code}.png`} />
+			{player.second_name.includes(player.web_name)
+				? `${player.first_name} ${player.second_name}`
+				: player.web_name}
+		</Container>
+	);
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
