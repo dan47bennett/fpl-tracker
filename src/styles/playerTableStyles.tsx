@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+`;
+
 export const RankingTableContainer = styled.div`
-	margin: 20px auto;
-	width: 95%;
+	width: 75%;
+	height: auto;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: 10px auto;
 	font-size: ${({ theme }) => theme.fontSize.table};
 `;
 
@@ -14,7 +27,7 @@ export const TableContainer = styled.div`
 `;
 
 export const ColumnContainer = styled.div`
-	width: 12.5%;
+	width: 100%;
 	min-width: 120px;
 	display: flex;
 	flex-direction: column;
@@ -23,7 +36,7 @@ export const ColumnContainer = styled.div`
 export const ScrollTable = styled.div`
 	display: flex;
 	flex-direction: row;
-	@media only screen and (max-width: 900px) {
+	@media only screen and (max-width: 1000px) {
 		overflow-x: scroll;
 	}
 	& > div {

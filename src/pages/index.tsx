@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import React from 'react';
 import { PlayerDisplay } from '../components/index/PlayerDisplay';
 import { url } from '../config';
+import { Container } from '../styles/playerTableStyles';
 import { Player } from '../types';
 import cleanPlayerData from '../utils/cleanPlayerData';
 
@@ -10,7 +11,11 @@ interface IndexProps {
 }
 
 const Index: NextPage<IndexProps> = ({ players }) => {
-	return <PlayerDisplay players={players} />;
+	return (
+		<Container>
+			<PlayerDisplay players={players} />
+		</Container>
+	);
 };
 
 export async function getStaticProps() {
