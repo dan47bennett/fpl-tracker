@@ -3,6 +3,7 @@ import { Player } from '../../types';
 import { RankingTable } from './ranking-table/RankingTable';
 import { teamAbbrs } from '../../config';
 import { SortSelect } from '../../styles/playerTableStyles';
+import { ContainerHorizontalResp, TextBox } from '../../styles/genericStyles';
 
 interface PlayerDisplayProps {
 	players: Player[];
@@ -50,30 +51,38 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
 
 	return (
 		<>
-			<label htmlFor="team-select">Sort by team:</label>
-			<SortSelect id="team-select" onChange={onChangeTeam}>
-				<option value={'all'}>All</option>
-				{allNames.map((name) => {
-					const index = allNames.indexOf(name);
-					return (
-						<option key={index} value={allAbbrs[index]}>
-							{name}
-						</option>
-					);
-				})}
-			</SortSelect>
-			<label htmlFor="position-select">Sort by position:</label>
-			<SortSelect id="position-select" onChange={onChangePosition}>
-				<option value={'all'}>All</option>
-				{positionInitials.map((position) => {
-					const index = positionInitials.indexOf(position);
-					return (
-						<option key={index} value={positionInitials[index]}>
-							{positionWords[index]}
-						</option>
-					);
-				})}
-			</SortSelect>
+			<TextBox>
+				Welcome to FPL Tracker. Here you can get a more in-depth insight
+				into the profile and stats behind your current stars and
+				potential transfer targets.
+			</TextBox>
+			<ContainerHorizontalResp>
+				<label htmlFor="team-select">Team</label>
+				<SortSelect id="team-select" onChange={onChangeTeam}>
+					<option value={'all'}>All</option>
+					{allNames.map((name) => {
+						const index = allNames.indexOf(name);
+						return (
+							<option key={index} value={allAbbrs[index]}>
+								{name}
+							</option>
+						);
+					})}
+				</SortSelect>
+				<label htmlFor="position-select">Position</label>
+				<SortSelect id="position-select" onChange={onChangePosition}>
+					<option value={'all'}>All</option>
+					{positionInitials.map((position) => {
+						const index = positionInitials.indexOf(position);
+						return (
+							<option key={index} value={positionInitials[index]}>
+								{positionWords[index]}
+							</option>
+						);
+					})}
+				</SortSelect>
+			</ContainerHorizontalResp>
+
 			<RankingTable players={displayData} page={page} setPage={setPage} />
 		</>
 	);
