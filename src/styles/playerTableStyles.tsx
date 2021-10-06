@@ -95,7 +95,8 @@ export const HeadingCell = styled(Cell)<{
 `;
 
 export const PageSelectionContainer = styled.div`
-	margin: 5px 0;
+	font-size: ${({ theme }) => theme.fontSize.subTitle};
+	margin: 10px 0;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -105,16 +106,17 @@ export const PageSelectionContainer = styled.div`
 `;
 
 export const PageChoiceButton = styled.div`
-	border-radius: 25px;
+	border-radius: 5px;
 	border: 2px solid;
-	margin: 0 2%;
-	background-color: ${({ theme }) => theme.colors.primary};
+	margin: 0 1%;
+	padding: 2px;
+	background-color: ${({ theme }) => theme.colors.secondary};
 	&:hover {
 		background-color: ${({ theme }) => theme.colors.button};
 	}
 `;
 
 export const CurrentPageDisplay = styled.div`
-	margin: 0 2%;
+	margin: 0;
 	background-color: ${({ theme }) => theme.colors.primary};
 `;

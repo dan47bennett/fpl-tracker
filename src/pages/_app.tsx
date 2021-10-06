@@ -30,6 +30,7 @@ const theme: DefaultTheme = {
 	},
 	fontSize: {
 		title: '20px',
+		subTitle: '16px',
 		table: '12px',
 	},
 };
