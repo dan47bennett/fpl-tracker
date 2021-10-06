@@ -21,12 +21,17 @@ const statsToShow = [
 
 interface RankingTableProps {
 	players: Player[];
+	page: number;
+	setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const RankingTable: React.FC<RankingTableProps> = ({ players }) => {
+export const RankingTable: React.FC<RankingTableProps> = ({
+	players,
+	page,
+	setPage,
+}) => {
 	const [sortingKey, setSortingKey] = useState<playerProp>('total_points');
 	const [displayData, setDisplayData] = useState<Player[]>([]);
-	const [page, setPage] = useState(0);
 	const [reverse, setReverse] = useState(false);
 
 	const playersPerPage = 20;

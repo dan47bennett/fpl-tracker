@@ -18,17 +18,18 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
 	const [positionSort, setPositionSort] = useState('all');
 	const [teamSort, setTeamSort] = useState('all');
 	const [displayData, setDisplayData] = useState(players);
+	const [page, setPage] = useState(0);
 
 	const onChangePosition = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		console.log('e: ', e);
 		const selectedPosition = e.target.value;
 		setPositionSort(selectedPosition);
+		setPage(0);
 	};
 
 	const onChangeTeam = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const selectedTeam = e.target.value;
 		setTeamSort(selectedTeam);
-		console.log('selectedTeam: ', selectedTeam);
+		setPage(0);
 	};
 
 	useEffect(() => {
@@ -73,7 +74,7 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
 					);
 				})}
 			</SortSelect>
-			<RankingTable players={displayData} />
+			<RankingTable players={displayData} page={page} setPage={setPage} />
 		</>
 	);
 };
