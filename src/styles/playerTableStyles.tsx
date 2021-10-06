@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-`;
-
 export const SortSelect = styled.select`
 	width: 100px;
 	margin: 5px auto;
@@ -40,6 +31,7 @@ export const TableContainer = styled.div`
 export const ColumnContainer = styled.div`
 	width: 100%;
 	min-width: 120px;
+	max-width: 300px;
 	display: flex;
 	flex-direction: column;
 `;
@@ -58,6 +50,9 @@ export const ScrollTable = styled.div`
 export const Cell = styled.div`
 	width: 100%;
 	height: 20px;
+	@media only screen and (min-width: 600px) {
+		height: 25px;
+	}
 	display: flex;
 	align-items: center;
 	justify-content: center;

@@ -3,7 +3,8 @@ import { GetServerSideProps } from 'next';
 import { url } from '../../../config';
 import cleanPlayerData from '../../../utils/cleanPlayerData';
 import { Player, FullPlayerProps } from '../../../types';
-import { Container, PlayerImage } from '../../../styles/profileStyles';
+import { PlayerImage } from '../../../styles/profileStyles';
+import { Container } from '../../../styles/genericStyles';
 
 interface PlayerProfileProps {
 	player: FullPlayerProps;

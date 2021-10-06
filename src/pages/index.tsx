@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import React from 'react';
 import { PlayerDisplay } from '../components/index/PlayerDisplay';
 import { url } from '../config';
-import { Container } from '../styles/playerTableStyles';
+import { Container } from '../styles/genericStyles';
 import { Player } from '../types';
 import cleanPlayerData from '../utils/cleanPlayerData';
 
