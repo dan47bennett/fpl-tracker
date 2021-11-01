@@ -27,9 +27,12 @@ const PlayerProfile: React.FC<PlayerProfileProps> = ({ player }) => {
 							? `${player.first_name} ${player.second_name}`
 							: player.web_name}
 					</InfoEntry>
+					<InfoEntry>{`${player.position}`}</InfoEntry>
+					<InfoEntry>{`${player.team_name}`}</InfoEntry>
 					<InfoEntry>
 						{`Total Points: ${player.total_points}`}
 					</InfoEntry>
+					<InfoEntry>{`Current Cost: ${player.now_cost}`}</InfoEntry>
 				</PlayerInfo>
 			</MiniProfile>
 		</ProfileContainer>
