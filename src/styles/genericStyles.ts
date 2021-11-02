@@ -42,3 +42,16 @@ export const TextBox = styled.div`
 	justify-content: center;
 	text-align: center;
 `;
+
+export const Row = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
+
+export const ResponsiveRow = styled.div`
+	display: flex;
+	flex-direction: row;
+	@media only screen and (max-width: 600px) {
+		flex-direction: column;
+	}
+`;

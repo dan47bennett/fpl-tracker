@@ -3,38 +3,21 @@ import { GetServerSideProps } from 'next';
 import { url } from '../../../config';
 import cleanPlayerData from '../../../utils/cleanPlayerData';
 import { Player, FullPlayerProps } from '../../../types';
-import {
-	InfoEntry,
-	MiniProfile,
-	PlayerImage,
-	PlayerInfo,
-	ProfileContainer,
-} from '../../../styles/profileStyles';
+import { ProfileContainer } from '../../../styles/profileStyles';
+import { MiniProfile } from '../../../components/index/player/MiniProfile';
+import { ResponsiveRow } from '../../../styles/genericStyles';
 
 interface PlayerProfileProps {
 	player: FullPlayerProps;
 }
 
 const PlayerProfile: React.FC<PlayerProfileProps> = ({ player }) => {
-	console.log('player: ', player);
+	// console.log('player: ', player);
 	return (
 		<ProfileContainer>
-			<MiniProfile>
-				<PlayerImage src={`${url.photo}${player.code}.png`} />
-				<PlayerInfo>
-					<InfoEntry>
-						{player.second_name.includes(player.web_name)
-							? `${player.first_name} ${player.second_name}`
-							: player.web_name}
-					</InfoEntry>
-					<InfoEntry>{`${player.position}`}</InfoEntry>
-					<InfoEntry>{`${player.team_name}`}</InfoEntry>
-					<InfoEntry>
-						{`Total Points: ${player.total_points}`}
-					</InfoEntry>
-					<InfoEntry>{`Current Cost: ${player.now_cost}`}</InfoEntry>
-				</PlayerInfo>
-			</MiniProfile>
+			<ResponsiveRow>
+				<MiniProfile player={player} />
+			</ResponsiveRow>
 		</ProfileContainer>
 	);
 };

@@ -60,6 +60,10 @@ export const Cell = styled.div`
 	background-color: ${({ theme }) => theme.colors.primary};
 `;
 
+export const SecondaryCell = styled(Cell)`
+	background-color: ${({ theme }) => theme.colors.secondary};
+`;
+
 export const Column = styled.div<{
 	id: string;
 	sortingKey: string;
