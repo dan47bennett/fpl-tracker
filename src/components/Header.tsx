@@ -5,7 +5,7 @@ const HeaderDiv = styled.div`
 	background-color: ${({ theme }) => theme.colors.secondary};
 	color: ${({ theme }) => theme.colors.primary};
 	font-size: ${({ theme }) => theme.fontSize.title};
-	height: 80px;
+	height: 10vh;
 	padding-left: 30px;
 	display: flex;
 	align-items: center;

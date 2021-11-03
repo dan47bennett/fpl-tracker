@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
 export const PlayerImage = styled.img`
-	width: 200px;
+	width: 220px;
+	height: 280px;
 	margin: 5px auto;
-	border-radius: 10px;
-	border: 2px solid;
+	/* border-radius: 10px;
+	border: 2px solid; */
 `;
 
 export const ProfileContainer = styled.div`
-	width: 100% - 10px;
-	padding: 0 5px;
+	width: 100%;
+	height: auto;
+	min-height: 90vh;
+	background-color: ${({ theme }) => theme.colors.button};
+	margin: 0;
 	display: flex;
 	flex-direction: row;
 	@media only screen and (max-width: 600px) {
@@ -21,9 +25,8 @@ export const ProfileContainer = styled.div`
 `;
 
 export const PlayerInfo = styled.div`
-	margin: 5px;
 	height: 100%;
-	width: 100% - 5px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	/* align-items: center;
