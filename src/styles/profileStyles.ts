@@ -1,18 +1,29 @@
 import styled from 'styled-components';
 
-export const PlayerImage = styled.img`
+export const BadgeImage = styled.img`
+	width: 65px;
+	height: 65px;
+	position: relative;
+	left: 10px;
+	top: 15px;
+	opacity: 90%;
+`;
+
+export const PlayerBackground = styled.div`
 	width: 220px;
 	height: 280px;
-	margin: 5px auto;
-	/* border-radius: 10px;
-	border: 2px solid; */
+	margin: 15px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 10px;
+	border: 1px solid;
+	border-color: ${({ theme }) => theme.colors.alt};
 `;
 
 export const ProfileContainer = styled.div`
 	width: 100%;
 	height: auto;
 	min-height: 90vh;
-	background-color: ${({ theme }) => theme.colors.button};
 	background-image: linear-gradient(
 			rgba(255, 255, 255, 0.9),
 			rgba(255, 255, 255, 0.1)

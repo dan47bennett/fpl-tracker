@@ -5,8 +5,9 @@ export const maxMobileWidth = 750;
 export const url = {
 	general: `${proxyURL}/fantasy.premierleague.com/api/bootstrap-static/`,
 	players: `${proxyURL}/fantasy.premierleague.com/api/element-summary`, // add element_id after the '/'
-	photo:
+	playerPhoto:
 		'https://resources.premierleague.com/premierleague/photos/players/110x140/p',
+	teamPhoto: 'https://resources.premierleague.com/premierleague/badges/t',
 };
 
 export const teamNames: Record<number, string> = {
@@ -30,6 +31,29 @@ export const teamNames: Record<number, string> = {
 	18: 'Watford',
 	19: 'West Ham',
 	20: 'Wolves',
+};
+
+export const badgeCode: Record<number, number> = {
+	1: 3,
+	2: 7,
+	3: 94,
+	4: 36,
+	5: 90,
+	6: 8,
+	7: 31,
+	8: 11,
+	10: 2,
+	9: 13,
+	11: 14,
+	12: 43,
+	13: 1,
+	14: 4,
+	15: 45,
+	16: 20,
+	17: 6,
+	18: 57,
+	19: 21,
+	20: 39,
 };
 
 export const teamAbbrs: Record<string, string> = {

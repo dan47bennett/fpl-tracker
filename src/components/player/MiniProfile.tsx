@@ -1,7 +1,7 @@
 import React from 'react';
 import { url, badgeCode } from '../../config';
 import { Row } from '../../styles/genericStyles';
-import { PlayerImage } from '../../styles/profileStyles';
+import { PlayerBackground, BadgeImage } from '../../styles/profileStyles';
 import { FullPlayerProps } from '../../types';
 
 interface MiniProfileProps {
@@ -12,10 +12,17 @@ export const MiniProfile: React.FC<MiniProfileProps> = ({ player }) => {
 	// console.log('player: ', player);
 	return (
 		<Row>
-			<PlayerImage src={`${url.playerPhoto}${player.code}.png`} />
-			<PlayerImage
-				src={`${url.teamPhoto}${badgeCode[player.team as number]}.png`}
-			/>
+			<PlayerBackground
+				style={{
+					backgroundImage: `url(${url.playerPhoto}${player.code}.png)`,
+				}}
+			>
+				<BadgeImage
+					src={`${url.teamPhoto}${
+						badgeCode[player.team as number]
+					}.png`}
+				/>
+			</PlayerBackground>
 		</Row>
 	);
 };
