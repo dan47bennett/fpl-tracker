@@ -4,7 +4,7 @@ import { url } from '../../../config';
 import cleanPlayerData from '../../../utils/cleanPlayerData';
 import { Player, FullPlayerProps } from '../../../types';
 import { ProfileContainer } from '../../../styles/profileStyles';
-import { MiniProfile } from '../../../components/index/player/MiniProfile';
+import { MiniProfile } from '../../../components/player/MiniProfile';
 import { ResponsiveRow } from '../../../styles/genericStyles';
 
 interface PlayerProfileProps {
