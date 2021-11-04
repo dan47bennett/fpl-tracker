@@ -7,6 +7,10 @@ export const BadgeImage = styled.img`
 	left: 10px;
 	top: 10px;
 	opacity: 90%;
+	@media only screen and (max-width: 600px) {
+		left: -70px;
+		top: 10px;
+	}
 `;
 
 export const PlayerBackground = styled.div`
