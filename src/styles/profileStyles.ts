@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const BadgeImage = styled.img`
-	width: 65px;
-	height: 65px;
+	width: 60px;
+	height: 60px;
 	position: relative;
 	left: 10px;
-	top: 15px;
+	top: 10px;
 	opacity: 90%;
 `;
 
