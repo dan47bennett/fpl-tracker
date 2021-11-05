@@ -6,6 +6,7 @@ import { Player, FullPlayerProps } from '../../../types';
 import { ProfileContainer } from '../../../styles/profileStyles';
 import { MiniProfile } from '../../../components/player/MiniProfile';
 import { ResponsiveRow } from '../../../styles/genericStyles';
+import { QuickStats } from '../../../components/player/QuickStats';
 
 interface PlayerProfileProps {
 	player: FullPlayerProps;
@@ -17,6 +18,7 @@ const PlayerProfile: React.FC<PlayerProfileProps> = ({ player }) => {
 		<ProfileContainer>
 			<ResponsiveRow>
 				<MiniProfile player={player} />
+				<QuickStats player={player} />
 			</ResponsiveRow>
 		</ProfileContainer>
 	);
