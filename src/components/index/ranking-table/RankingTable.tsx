@@ -14,6 +14,7 @@ const statsToShow = [
 	{ title: 'Team', id: 'team_abbr' },
 	{ title: 'Position', id: 'position' },
 	{ title: 'Total Points', id: 'total_points' },
+	{ title: 'Current cost', id: 'now_cost' },
 	{ title: 'PPG', id: 'points_per_game' },
 	{ title: 'PPG per £M', id: 'ppg_per_million' },
 	{ title: 'Form', id: 'form' },
