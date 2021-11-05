@@ -44,11 +44,19 @@ export const TextBox = styled.div`
 `;
 
 export const Row = styled.div`
+	width: 100%;
+	height: auto;
 	display: flex;
 	flex-direction: row;
+	@media only screen and (max-width: 500px) {
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
 `;
 
 export const ResponsiveRow = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	@media only screen and (max-width: 600px) {

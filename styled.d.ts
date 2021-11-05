@@ -8,6 +8,7 @@ declare module 'styled-components' {
 			secondary: string;
 			alt: string;
 			button: string;
+			transparentButton: string;
 		};
 		fontSize: {
 			title: string;

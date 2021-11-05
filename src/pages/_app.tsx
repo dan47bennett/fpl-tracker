@@ -27,6 +27,7 @@ const theme: DefaultTheme = {
 		secondary: '#46A2C3',
 		alt: '#E5E5E5',
 		button: '#093249',
+		transparentButton: 'rgba(9, 50, 73, 0.4)',
 	},
 	fontSize: {
 		title: '20px',

@@ -1,23 +1,62 @@
 import styled from 'styled-components';
 
 export const BadgeImage = styled.img`
-	width: 60px;
-	height: 60px;
+	width: 45px;
+	height: 45px;
 	position: relative;
 	left: 10px;
 	top: 10px;
 	opacity: 90%;
+	@media only screen and (max-width: 500px) {
+		left: -50px;
+	}
+	@media only screen and (max-width: 350px) {
+		width: 40px;
+		height: 40px;
+		left: -45px;
+	}
 `;
 
 export const PlayerBackground = styled.div`
-	width: 220px;
-	height: 280px;
+	width: 165px;
+	height: 210px;
 	margin: 15px;
+	margin-right: 0;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
 	border-radius: 10px;
 	border: 1px solid;
 	border-color: ${({ theme }) => theme.colors.alt};
+	background-color: ${({ theme }) => theme.colors.transparentButton};
+	@media only screen and (max-width: 500px) {
+		margin-left: 0;
+	}
+	@media only screen and (max-width: 350px) {
+		width: 142px;
+		height: 180px;
+	}
+`;
+
+export const InfoBox = styled.div`
+	border-radius: 10px;
+	border: 1px solid;
+	border-color: ${({ theme }) => theme.colors.alt};
+	color: ${({ theme }) => theme.colors.alt};
+	margin: 15px 0;
+	background-color: ${({ theme }) => theme.colors.transparentButton};
+	width: 165px;
+	height: 210px;
+	display: flex;
+	flex-direction: column;
+	@media only screen and (max-width: 350px) {
+		width: 142px;
+		height: 180px;
+	}
+`;
+
+export const InfoEntry = styled.div`
+	background-color: rgba(0, 0, 0, 0);
+	margin: auto auto;
 `;
 
 export const ProfileContainer = styled.div`
