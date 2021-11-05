@@ -7,7 +7,7 @@ export const BadgeImage = styled.img`
 	left: 10px;
 	top: 10px;
 	opacity: 90%;
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 650px) {
 		left: -50px;
 	}
 	@media only screen and (max-width: 350px) {
@@ -28,8 +28,9 @@ export const PlayerBackground = styled.div`
 	border: 1px solid;
 	border-color: ${({ theme }) => theme.colors.alt};
 	background-color: ${({ theme }) => theme.colors.transparentButton};
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 650px) {
 		margin-left: 0;
+		margin-bottom: 5px;
 	}
 	@media only screen and (max-width: 350px) {
 		width: 142px;
@@ -52,11 +53,23 @@ export const InfoBox = styled.div`
 		width: 142px;
 		height: 180px;
 	}
+	@media only screen and (max-width: 650px) {
+		margin-bottom: 5px;
+	}
+`;
+
+export const LargeInfoBox = styled(InfoBox)`
+	width: calc(100% - 40px);
+	margin: 15px 20px;
+	@media only screen and (max-width: 650px) {
+		margin-top: 5px;
+	}
 `;
 
 export const InfoEntry = styled.div`
 	background-color: rgba(0, 0, 0, 0);
 	margin: auto auto;
+	text-align: center;
 `;
 
 export const ProfileContainer = styled.div`
@@ -73,7 +86,7 @@ export const ProfileContainer = styled.div`
 	margin: 0;
 	display: flex;
 	flex-direction: row;
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 650px) {
 		flex-direction: column;
 		align-items: center;
 	}
