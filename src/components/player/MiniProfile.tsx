@@ -1,11 +1,11 @@
 import React from 'react';
 import { url, badgeCode } from '../../config';
-import { Row } from '../../styles/genericStyles';
 import {
 	PlayerBackground,
 	BadgeImage,
 	InfoBox,
 	InfoEntry,
+	PlayerInfoBox,
 } from '../../styles/profileStyles';
 import { FullPlayerProps } from '../../types';
 
@@ -16,7 +16,7 @@ interface MiniProfileProps {
 export const MiniProfile: React.FC<MiniProfileProps> = ({ player }) => {
 	// console.log('player: ', player);
 	return (
-		<Row>
+		<PlayerInfoBox>
 			<PlayerBackground
 				style={{
 					backgroundImage: `url(${url.playerPhoto}${player.code}.png)`,
@@ -39,6 +39,6 @@ export const MiniProfile: React.FC<MiniProfileProps> = ({ player }) => {
 				<InfoEntry>{player.position}</InfoEntry>
 				<InfoEntry>Current cost: {player.now_cost}</InfoEntry>
 			</InfoBox>
-		</Row>
+		</PlayerInfoBox>
 	);
 };

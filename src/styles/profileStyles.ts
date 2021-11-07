@@ -1,81 +1,8 @@
 import styled from 'styled-components';
 
-export const BadgeImage = styled.img`
-	width: 45px;
-	height: 45px;
-	position: relative;
-	left: 10px;
-	top: 10px;
-	opacity: 90%;
-	@media only screen and (max-width: 650px) {
-		left: -50px;
-	}
-	@media only screen and (max-width: 350px) {
-		width: 40px;
-		height: 40px;
-		left: -45px;
-	}
-`;
-
-export const PlayerBackground = styled.div`
-	width: 165px;
-	height: 210px;
-	margin: 15px;
-	margin-right: 0;
-	background-repeat: no-repeat;
-	background-size: contain;
-	border-radius: 10px;
-	border: 1px solid;
-	border-color: ${({ theme }) => theme.colors.alt};
-	background-color: ${({ theme }) => theme.colors.transparentButton};
-	@media only screen and (max-width: 650px) {
-		margin-left: 0;
-		margin-bottom: 5px;
-	}
-	@media only screen and (max-width: 350px) {
-		width: 142px;
-		height: 180px;
-	}
-`;
-
-export const InfoBox = styled.div`
-	border-radius: 10px;
-	border: 1px solid;
-	border-color: ${({ theme }) => theme.colors.alt};
-	color: ${({ theme }) => theme.colors.alt};
-	margin: 15px 0;
-	background-color: ${({ theme }) => theme.colors.transparentButton};
-	width: 165px;
-	height: 210px;
-	display: flex;
-	flex-direction: column;
-	@media only screen and (max-width: 350px) {
-		width: 142px;
-		height: 180px;
-	}
-	@media only screen and (max-width: 650px) {
-		margin-bottom: 5px;
-	}
-`;
-
-export const LargeInfoBox = styled(InfoBox)`
-	width: calc(100% - 40px);
-	margin: 15px 20px;
-	@media only screen and (max-width: 650px) {
-		margin-top: 5px;
-	}
-`;
-
-export const InfoEntry = styled.div`
-	background-color: rgba(0, 0, 0, 0);
-	margin: auto auto;
-	text-align: center;
-`;
-
 export const ProfileContainer = styled.div`
 	width: 100%;
-	height: auto;
-	min-height: 90vh;
+	height: 90vh;
 	background-image: linear-gradient(
 			rgba(255, 255, 255, 0.9),
 			rgba(255, 255, 255, 0.1)
@@ -85,9 +12,89 @@ export const ProfileContainer = styled.div`
 	background-size: cover;
 	margin: 0;
 	display: flex;
-	flex-direction: row;
-	@media only screen and (max-width: 650px) {
-		flex-direction: column;
+	flex-direction: column;
+	@media only screen and (max-width: 850px) {
 		align-items: center;
+		height: 1400px;
 	}
+	@media only screen and (max-width: 500px) {
+		height: 1000px;
+		font-size: ${({ theme }) => theme.fontSize.table};
+	}
+	@media only screen and (max-width: 400px) {
+		height: 800px;
+	}
+`;
+
+export const PlayerInfoBox = styled.div`
+	height: calc(100% - 20px);
+	width: calc(45% - 20px);
+	margin: 10px;
+	display: flex;
+	flex-direction: row;
+	@media only screen and (max-width: 1400px) {
+		width: calc(55% - 20px);
+		margin: 20px 10px;
+		height: auto;
+	}
+	@media only screen and (max-width: 850px) {
+		width: 80%;
+		height: 50%;
+	}
+`;
+
+export const StyledPlayerInfoBox = styled(PlayerInfoBox)`
+	background-repeat: no-repeat;
+	background-size: contain;
+	border-radius: 10px;
+	border: 1px solid;
+	border-color: ${({ theme }) => theme.colors.alt};
+	color: ${({ theme }) => theme.colors.alt};
+	background-color: ${({ theme }) => theme.colors.transparentButton};
+	flex-direction: column;
+`;
+
+export const LargerInfoBox = styled(StyledPlayerInfoBox)`
+	width: calc(55% - 20px);
+	@media only screen and (max-width: 850px) {
+		width: 80%;
+		height: 60%;
+	}
+`;
+
+export const QuickStatsBox = styled(LargerInfoBox)`
+	@media only screen and (max-width: 850px) {
+		height: 40%;
+	}
+`;
+
+export const PlayerBackground = styled(StyledPlayerInfoBox)`
+	width: 60%;
+	height: 100%;
+	margin: 0;
+	background-position: center;
+	background-color: ${({ theme }) => theme.colors.transparentButton};
+`;
+
+export const InfoBox = styled(StyledPlayerInfoBox)`
+	width: 40%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+`;
+
+export const InfoEntry = styled.div`
+	background-color: rgba(0, 0, 0, 0);
+	margin: auto 5px;
+	text-align: center;
+`;
+
+export const BadgeImage = styled.img`
+	width: 45px;
+	height: 45px;
+	position: relative;
+	left: 10px;
+	top: 10px;
+	opacity: 90%;
 `;

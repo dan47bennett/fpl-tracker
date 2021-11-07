@@ -56,3 +56,9 @@ export const ResponsiveRow = styled.div`
 		text-align: center;
 	}
 `;
+
+export const ResponsiveRowReverse = styled(ResponsiveRow)`
+	@media only screen and (max-width: 850px) {
+		flex-direction: column-reverse;
+	}
+`;

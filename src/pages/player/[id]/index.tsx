@@ -5,8 +5,13 @@ import cleanPlayerData from '../../../utils/cleanPlayerData';
 import { Player, FullPlayerProps } from '../../../types';
 import { ProfileContainer } from '../../../styles/profileStyles';
 import { MiniProfile } from '../../../components/player/MiniProfile';
-import { ResponsiveRow } from '../../../styles/genericStyles';
+import {
+	ResponsiveRow,
+	ResponsiveRowReverse,
+} from '../../../styles/genericStyles';
 import { QuickStats } from '../../../components/player/QuickStats';
+import { Fixtures } from '../../../components/player/Fixtures';
+import { ResultChart } from '../../../components/player/ResultChart';
 
 interface PlayerProfileProps {
 	player: FullPlayerProps;
@@ -20,6 +25,10 @@ const PlayerProfile: React.FC<PlayerProfileProps> = ({ player }) => {
 				<MiniProfile player={player} />
 				<QuickStats player={player} />
 			</ResponsiveRow>
+			<ResponsiveRowReverse>
+				<Fixtures />
+				<ResultChart />
+			</ResponsiveRowReverse>
 		</ProfileContainer>
 	);
 };

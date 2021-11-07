@@ -1,6 +1,6 @@
 import React from 'react';
 import { FullPlayerProps } from '../../types';
-import { InfoEntry, LargeInfoBox } from '../../styles/profileStyles';
+import { InfoEntry, QuickStatsBox } from '../../styles/profileStyles';
 
 interface QuickStatsProps {
 	player: FullPlayerProps;
@@ -8,11 +8,11 @@ interface QuickStatsProps {
 
 export const QuickStats: React.FC<QuickStatsProps> = ({ player }) => {
 	return (
-		<LargeInfoBox>
+		<QuickStatsBox>
 			<InfoEntry>
 				Total Points: {player.total_points} | Cost: {player.now_cost} |
 				Owned by {player.selected_by_percent}% of players
 			</InfoEntry>
-		</LargeInfoBox>
+		</QuickStatsBox>
 	);
 };
