@@ -43,24 +43,16 @@ export const TextBox = styled.div`
 	text-align: center;
 `;
 
-export const Row = styled.div`
-	width: auto;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	@media only screen and (max-width: 650px) {
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-	}
-`;
-
 export const ResponsiveRow = styled.div`
 	font-size: 14px;
 	width: 100%;
+	height: 50%;
 	display: flex;
 	flex-direction: row;
-	@media only screen and (max-width: 650px) {
+	@media only screen and (max-width: 850px) {
 		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 	}
 `;
