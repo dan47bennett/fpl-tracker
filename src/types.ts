@@ -79,7 +79,7 @@ export interface Player extends PlayerSortProps {
 
 // position - FWD - element_type 4, MID - element_type 3, DEF - element_type 2, GK - element_type 1
 
-interface Fixture {
+export interface Fixture {
 	id: number;
 	code: number;
 	team_h: number;
@@ -96,7 +96,7 @@ interface Fixture {
 	difficulty: number;
 }
 
-interface Result {
+export interface Result {
 	element: number;
 	fixture: number;
 	opponent_team: number;
