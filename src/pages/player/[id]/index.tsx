@@ -27,7 +27,7 @@ const PlayerProfile: React.FC<PlayerProfileProps> = ({ player }) => {
 			</ResponsiveRow>
 			<ResponsiveRowReverse>
 				<Fixtures />
-				<ResultChart />
+				<ResultChart Results={player.history} />
 			</ResponsiveRowReverse>
 		</ProfileContainer>
 	);
