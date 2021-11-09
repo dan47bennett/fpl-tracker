@@ -56,6 +56,9 @@ export const StyledPlayerInfoBox = styled(PlayerInfoBox)`
 
 export const LargerInfoBox = styled(StyledPlayerInfoBox)`
 	width: calc(55% - 20px);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 	@media only screen and (max-width: 850px) {
 		width: 80%;
 		height: 60%;
@@ -97,4 +100,10 @@ export const BadgeImage = styled.img`
 	left: 10px;
 	top: 10px;
 	opacity: 90%;
+`;
+
+export const Graph = styled.canvas`
+	width: 80%;
+	height: 80%;
+	background-color: ${({ theme }) => theme.colors.alt}; ;
 `;
