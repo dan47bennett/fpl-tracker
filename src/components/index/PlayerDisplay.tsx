@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Player } from '../../types';
 import { RankingTable } from './ranking-table/RankingTable';
-import { teamAbbrs } from '../../config';
+import { teamAbbrs, teamNames } from '../../config';
 import { SortSelect } from '../../styles/playerTableStyles';
 import { ContainerHorizontalResp, TextBox } from '../../styles/genericStyles';
 
@@ -13,7 +13,7 @@ const positionInitials = ['GK', 'DEF', 'MID', 'FWD'];
 const positionWords = ['Goalkeepers', 'Defenders', 'Midfielders', 'Forwards'];
 
 const allAbbrs = Object.values(teamAbbrs);
-const allNames = Object.keys(teamAbbrs);
+const allNames = Object.values(teamNames);
 
 export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
 	const [positionSort, setPositionSort] = useState('all');
@@ -36,7 +36,6 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
 	useEffect(() => {
 		let filtered = players;
 		if (positionSort !== 'all') {
-			console.log('positionSort: ', positionSort);
 			filtered = filtered.filter(
 				(player) => player.position === positionSort
 			);
@@ -60,10 +59,9 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
 				<label htmlFor="team-select">Team</label>
 				<SortSelect id="team-select" onChange={onChangeTeam}>
 					<option value={'all'}>All</option>
-					{allNames.map((name) => {
-						const index = allNames.indexOf(name);
+					{allNames.map((name, i) => {
 						return (
-							<option key={index} value={allAbbrs[index]}>
+							<option key={i} value={allAbbrs[i]}>
 								{name}
 							</option>
 						);
@@ -87,3 +85,4 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({ players }) => {
 		</>
 	);
 };
+

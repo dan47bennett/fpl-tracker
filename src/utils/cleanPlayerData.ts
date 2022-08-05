@@ -20,27 +20,26 @@ const teamConversion = (player: Player) => {
 };
 
 const getAbbreviation = (player: Player) => {
-	const teamName = player.team_name as string;
-	const teamAbbr = teamAbbrs[teamName];
+	const teamCode = player.team;
+	const teamAbbr = teamAbbrs[teamCode];
 	return teamAbbr;
 };
 
 const cleanPlayerData = (players: Player[]) => {
-	for (let i = 0; i < players.length; i++) {
-		const player = players[i];
-		const ppg = parseFloat(player.points_per_game.toString());
-		player.now_cost = player.now_cost / 10;
-		const ppgPerMillion = (ppg / player.now_cost).toFixed(2);
-		player.ppg_per_million = ppgPerMillion;
+	return players.map((p) => {
+		const ppg = parseFloat(p.points_per_game.toString());
 
-		player.points_per_game = ppg;
-
-		player.web_name = player.web_name.replace(/[012~[\]]/g, '').trim();
-
-		player.position = positionConversion(player);
-		player.team_name = teamConversion(player);
-		player.team_abbr = getAbbreviation(player);
-	}
+		return {
+			...p,
+			points_per_game: ppg,
+			ppgPerMillion: (ppg / p.now_cost).toFixed(2),
+			position: positionConversion(p),
+			team_abbr: getAbbreviation(p),
+			team_name: teamConversion(p),
+			web_name: p.web_name.replace(/[012~[\]]/g, '').trim(),
+		};
+	});
 };
 
 export default cleanPlayerData;
+

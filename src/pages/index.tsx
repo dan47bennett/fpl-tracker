@@ -23,8 +23,8 @@ export async function getStaticProps() {
 		headers: { 'User-Agent': 'ANYTHING_WILL_WORK_HERE' },
 	});
 	const playerJson = await playerData.json();
-	const players = playerJson.elements as Player[];
-	cleanPlayerData(players);
+	const playerElements = playerJson.elements as Player[];
+	const players = cleanPlayerData(playerElements);
 
 	return {
 		props: {
