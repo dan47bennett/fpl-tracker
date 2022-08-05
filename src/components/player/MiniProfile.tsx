@@ -14,7 +14,6 @@ interface MiniProfileProps {
 }
 
 export const MiniProfile: React.FC<MiniProfileProps> = ({ player }) => {
-	// console.log('player: ', player);
 	return (
 		<PlayerInfoBox>
 			<PlayerBackground
@@ -42,3 +41,4 @@ export const MiniProfile: React.FC<MiniProfileProps> = ({ player }) => {
 		</PlayerInfoBox>
 	);
 };
+

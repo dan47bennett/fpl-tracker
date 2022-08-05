@@ -18,7 +18,6 @@ interface PlayerProfileProps {
 }
 
 const PlayerProfile: React.FC<PlayerProfileProps> = ({ player }) => {
-	// console.log('player: ', player);
 	return (
 		<ProfileContainer>
 			<ResponsiveRow>
@@ -64,3 +63,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default PlayerProfile;
+
